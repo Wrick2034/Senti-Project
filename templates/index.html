@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>DataFrame Display</title>
+  </head>
+  <body>
+    <table>
+      <thead>
+        <tr style="border:2px solid" >
+          {% for column in df.columns %}
+            <th>{{ column }}</th>
+          {% endfor %}
+        </tr>
+      </thead>
+      <tbody>
+        {% for index, row in df.iterrows() %}
+          <tr style="border:2px solid">
+            {% for value in row %}
+              <td>{{ value }}</td>
+            {% endfor %}
+          </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </body>
+</html>
